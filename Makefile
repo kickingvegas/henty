@@ -1,6 +1,7 @@
 
 EXEC=henty
+INSTALL_DIR=${HOME}/bin
 
 install:
-	cp ${EXEC}.py ${HOME}/bin/${EXEC}
-	chmod uog+x ${HOME}/bin/${EXEC}
+	cp ${EXEC}.py ${INSTALL_DIR}/${EXEC}
+	chmod uog+x ${INSTALL_DIR}/${EXEC}
