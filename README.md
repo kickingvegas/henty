@@ -1,11 +1,14 @@
 # henty
 
-A command-line utility to report HTML entities.
+A command-line utility to list out HTML entities. 
+
+This utility is inspired by the command-line utility `ascii` which provides a quick reference to an ASCII character map.
 
 ## System Requirements
 
 * Terminal program supporting UTF-8
 * Python 2.7
+* Posix (Linux, Unix, OS-X) Platform
 
 Tested on:
 
