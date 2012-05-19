@@ -1,5 +1,5 @@
 
-EXEC=htmle
+EXEC=henty
 
 install:
 	cp ${EXEC}.py ${HOME}/bin/${EXEC}
