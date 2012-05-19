@@ -37,4 +37,9 @@ To get help
 
     $ henty -h
     
-    
+
+## License
+
+Apache 2.0 License
+
+
