@@ -17,6 +17,7 @@ class Application:
         self.options['pager'] = False
         self.options['columns'] = 4
         self.options['outfile'] = sys.stdout
+        outfileName = None
         
         rows, columns = os.popen('stty size', 'r').read().split()
 
@@ -40,9 +41,17 @@ class Application:
                     sys.exit(1)
 
             elif o in ('-o', '--output'):
-                outfile = open(i, 'w')
-                self.options['outfile'] = outfile
-                
+                outfileName = i
+
+
+        if (self.options['pager'] and outfileName):
+            sys.stderr.write('Warning: pager option overrides output option.\n')
+            self.options['outfile'] = sys.stdout
+
+        elif outfileName:
+            outfile = open(outfileName, 'w')
+            self.options['outfile'] = outfile
+            
 
                     #{ 'name': 'ASCII', 
                     # 'r' : range(33, 127)},
@@ -129,15 +138,10 @@ class Application:
                 count = count + 1
                 if (count % self.options['columns']) == 0:
                     logList.append(sep.join(bufList))
-                    #sys.stdout.write(sep.join(bufList))
-                    #sys.stdout.write('\n')
                     bufList = []
                     count = 0
             else:
                 logList.append(sep.join(bufList))
-                #logList.append('\n')
-                #sys.stdout.write(sep.join(bufList))
-                #sys.stdout.write('\n')
                 count = 0
 
         count = 0
