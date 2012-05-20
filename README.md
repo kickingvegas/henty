@@ -13,11 +13,11 @@ This utility is inspired by the command-line utility `ascii` which provides a qu
 Tested on:
 
 * Mac OS-X 10.7.4
-* Ubuntu 11
+* Ubuntu 11.1
 
 ## Installation
 
-* Edit the Makefile to choose where the installation dictory `INSTALL_DIR` should be.
+* Edit the Makefile to choose where the installation dictory `INSTALL_DIR` should be. By default it is `$HOME/bin`.
 
 * Run make
 
